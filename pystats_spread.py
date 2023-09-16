@@ -18,11 +18,8 @@ def get_variance(data: list):
     # getting the mean of the data
     mean = pc.get_mean(data)
 
-    # getting the differences between the mean and each datapoint
-    deviation = [i - mean for i in data]
-
-    # squaring these differences
-    deviation_squared = [i ** 2 for i in deviation]
+    # getting the squared differences between the mean and each datapoint
+    deviation_squared = [(i - mean) ** 2 for i in data]
 
     # getting the mean of the squares differences
     variance = pc.get_mean(deviation_squared)
