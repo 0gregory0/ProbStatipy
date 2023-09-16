@@ -14,5 +14,5 @@ To understand how modules work, check out the [understanding_modules](https://gi
 | Module | Statistics Topic | Dependencies |
 | --- | --- | --- | 
 | pystats_central | Central Tendancy | - |     
-| pystats_spread | Spread / Dispersion | [math](https://docs.python.org/3/library/math.html)https://docs.python.org/3/library/math.html |     
+| pystats_spread | Spread / Dispersion | [math](https://docs.python.org/3/library/math.html) |     
 
