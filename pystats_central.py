@@ -109,3 +109,23 @@ def get_mode(data: list):
 
    return list_of_modes
 # =============================================================================
+
+
+# TESTS
+# Testing the above functions to ensure they work properly
+
+if __name__ == "__main__":
+    data_1 = [34500, 30700, 32900, 36000, 34100, 33800, 32500]
+    data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
+
+    print(data_1)
+    print(f"Mean: {get_mean(data_1)}")
+    print(f"Median: {get_median(data_1)}")
+    print(f"Mode: {get_mode(data_1)}")
+
+    print("\n")
+
+    print(data_2)
+    print(f"Mean: {get_mean(data_2)}")
+    print(f"Median: {get_median(data_2)}")
+    print(f"Mode: {get_mode(data_2)}")
