@@ -70,7 +70,9 @@ def get_mode(data: list):
    """
    Function: get_mode() -> Get's the mode of a list of numbers
    Input: data -> a list of numbers
-   Output: mode -> a list of numbers that occur the highest amount of times
+   Output: mode -> The number that occurs the highest amount of times
+                   a list if there's more than one mode
+                   None if all numbers occur an equal amount of times
    """
 
    # A list was made just incase there is more than one element occur the
@@ -107,7 +109,17 @@ def get_mode(data: list):
               # element did
               list_of_modes.append(i)
 
-   return list_of_modes
+   # Returning the number that occurs the highest amount of times
+   if len(list_of_modes) == 1:
+       return list_of_modes[0]
+   
+   # Or a None if all numbers occur an equal amount of times
+   elif len(list_of_modes) == len(data):
+       return None
+   
+   # Or a list if there's more than one mode
+   else:
+      return list_of_modes
 # =============================================================================
 
 
