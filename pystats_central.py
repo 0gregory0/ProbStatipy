@@ -1,5 +1,5 @@
 # ARITHMETIC MEAN
-def get_mean(data: list):
+def mean(data: list):
     
     """
     Function: Gets the mean of a list of numbers.
@@ -20,10 +20,10 @@ def get_mean(data: list):
 # golden_mean
 
 # MEDIAN
-def get_median(data: list):
+def median(data: list):
 
     """
-    Function: get_median -> Get's the median of a list of numbers
+    Function: median -> Get's the median of a list of numbers
     Input: data -> a list of numbers
     Output: median -> the number in the middle of the list if the length of the
                       list is odd or the arithmetic mean of the two numbers in
@@ -65,10 +65,10 @@ def get_median(data: list):
 # =============================================================================
 
 # MODE
-def get_mode(data: list):
+def mode(data: list):
    
    """
-   Function: get_mode() -> Get's the mode of a list of numbers
+   Function: mode() -> Get's the mode of a list of numbers
    Input: data -> a list of numbers
    Output: mode -> The number that occurs the highest amount of times
                    a list if there's more than one mode
@@ -131,13 +131,13 @@ if __name__ == "__main__":
     data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
 
     print(data_1)
-    print(f"Mean: {get_mean(data_1)}")
-    print(f"Median: {get_median(data_1)}")
-    print(f"Mode: {get_mode(data_1)}")
+    print(f"Mean: {mean(data_1)}")
+    print(f"Median: {median(data_1)}")
+    print(f"Mode: {mode(data_1)}")
 
     print("\n")
 
     print(data_2)
-    print(f"Mean: {get_mean(data_2)}")
-    print(f"Median: {get_median(data_2)}")
-    print(f"Mode: {get_mode(data_2)}")
+    print(f"Mean: {mean(data_2)}")
+    print(f"Median: {median(data_2)}")
+    print(f"Mode: {mode(data_2)}")

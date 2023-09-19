@@ -2,9 +2,9 @@ import pystats_central as pc
 import math
 
 # VARIANCE
-def get_variance(data: list):
+def variance(data: list):
     """
-    Function: get_variance() -> Gets the variance of a list of numbers
+    Function: variance() -> Gets the variance of a list of numbers
     Input: data -> a list of numbers
     Output: variance -> a float representing variance
 
@@ -16,21 +16,21 @@ def get_variance(data: list):
     """
 
     # getting the mean of the data
-    mean = pc.get_mean(data)
+    mean = pc.mean(data)
 
     # getting the squared differences between the mean and each datapoint
     deviation_squared = [(i - mean) ** 2 for i in data]
 
     # getting the mean of the squares differences
-    variance = pc.get_mean(deviation_squared)
+    variance = pc.mean(deviation_squared)
 
     return variance
 # =============================================================================
 
 # STANDARD DEVIATION
-def get_stdeviation(data: list):
+def stdeviation(data: list):
     """
-    Function: get_stdeviation() -> Get's the standard deviation of a list of
+    Function: stdeviation() -> Get's the standard deviation of a list of
     data
     Input: data -> a list of numbers
     Output: stdeviation -> a float representing the standard deviation.
@@ -40,18 +40,18 @@ def get_stdeviation(data: list):
     """
 
     # getting the variance of the data
-    variance = get_variance(data)
+    var_of_data = variance(data)
 
     # getting the square root of the data
-    stdeviation = math.sqrt(variance)
+    stdeviation = math.sqrt(var_of_data)
 
     return stdeviation
 # =============================================================================
 
 # MEAN ABSOLUTE DEVIATION
-def get_mad(data: list):
+def mad(data: list):
     """
-    Function: get_mad() -> gets the Mean Absolute Deviation (MAD)
+    Function: mad() -> gets the Mean Absolute Deviation (MAD)
     Input: data -> a list of numbers
     Output: mad -> a float representing the Mean Absolute Deviation (MAD)
 
@@ -63,13 +63,13 @@ def get_mad(data: list):
     """
 
     # Deriving the mean
-    mean = pc.get_mean(data)
+    mean = pc.mean(data)
 
     # Getting the absolute difference between the mean and each datapoint
     absolute_deviation = [abs(i - mean) for i in data]
 
     # getting the mean of the absolute differences
-    mad = pc.get_mean(absolute_deviation)
+    mad = pc.mean(absolute_deviation)
 
     return mad
 # =============================================================================
@@ -98,15 +98,15 @@ if __name__ == "__main__":
     data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
 
     print(data_1)
-    print(f"Variance: {get_variance(data_1)}")
-    print(f"Mean Standard Deviation: {get_stdeviation(data_1)}")
-    print(f"Mean Absolute Deviation: {get_mad(data_1)}")
+    print(f"Variance: {variance(data_1)}")
+    print(f"Mean Standard Deviation: {stdeviation(data_1)}")
+    print(f"Mean Absolute Deviation: {mad(data_1)}")
     print(f"Range: {get_range(data_1)}")
 
     print("\n")
 
     print(data_2)
-    print(f"Variance: {get_variance(data_2)}")
-    print(f"Mean Standard Deviation: {get_stdeviation(data_2)}")
-    print(f"Mean Absolute Deviation: {get_mad(data_2)}")
+    print(f"Variance: {variance(data_2)}")
+    print(f"Mean Standard Deviation: {stdeviation(data_2)}")
+    print(f"Mean Absolute Deviation: {mad(data_2)}")
     print(f"Range: {get_range(data_2)}")
