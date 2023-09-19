@@ -2,9 +2,9 @@
 def mean(data: list):
     
     """
-    Function: Gets the mean of a list of numbers.
-    Input: a list stored as "data".
-    Output: a float denoting the mean or average stored as "mean".
+    Function: mean() -> Gets the mean of a list of numbers.
+    Input: data -> a list stored as "data".
+    Output: mean -> a float denoting the mean or average stored as "mean".
     
     The mean is obtained by dividing the sum of the data by the 
     number of datapoints (number of observations).
@@ -23,7 +23,7 @@ def mean(data: list):
 def median(data: list):
 
     """
-    Function: median -> Get's the median of a list of numbers
+    Function: median() -> Get's the median of a list of numbers
     Input: data -> a list of numbers
     Output: median -> the number in the middle of the list if the length of the
                       list is odd or the arithmetic mean of the two numbers in
