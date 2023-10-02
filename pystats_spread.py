@@ -89,6 +89,45 @@ def get_range(data: list):
     return the_range
 # =============================================================================
 
+# INTERQUARTILE RANGE
+def iqr(data: list):
+    """
+    Function: iqr() -> get's the interquartile range for a list of numbers
+    Input: data -> a list of numbers
+    Output: iqr -> a number representing the interquartile range
+    """
+
+    # sort the data
+    data = sorted(data)
+
+    # find the q1th value [1/4 * (n+1)]
+    q1th_value = (1/4)*(len(data) + 1)
+
+    # let q1 be the q1th value if the q1th value is whole
+    if q1th_value.is_integer() :
+        q1 = data[q1th_value - 1] # -1 because of zero based indexing
+    
+    # and carry out linear interpolation to find q1 if it is not a whole number
+    else:
+        q1 = data[int(q1th_value) - 1] + ((q1th_value - int(q1th_value))*((data[int(q1th_value)]) - (data[int(q1th_value) - 1])))
+
+    # find the q3rd value [3/4 * (n+1)]
+    q3rd_value = (3/4)*(len(data) + 1)
+
+    # let q3 be the q3rd value if the q3rd value is whole
+    if q3rd_value.is_integer():
+        q3 = data[q3rd_value - 1] # -1 because of zero-based indexing
+
+    # if the q3rd value is not a whole number, carry out linear interpolation
+    else:
+        q3 = data[int(q3rd_value) - 1] + ((q3rd_value - int(q3rd_value))*((data[int(q3rd_value)]) - (data[int(q3rd_value) - 1])))
+
+    # finally, to get IQR, we get the difference between q3 and q1
+    iqr = q3-q1
+    return iqr
+
+iqr([7, 1, 3, 5, 9, 6, 8, 2])
+
 
 # TESTS
 # Testing the above functions to ensure they work properly
@@ -96,6 +135,8 @@ def get_range(data: list):
 if __name__ == "__main__":
     data_1 = [34500, 30700, 32900, 36000, 34100, 33800, 32500]
     data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
+    data_3 = [7, 1, 3, 5, 9, 8, 6, 2]
+    data_4 = [-19.8, -13.8, 12.0, 13.6, 14.3, 25.5, 36.3, 43.6]
 
     print(data_1)
     print(f"Variance: {variance(data_1)}")
@@ -110,3 +151,13 @@ if __name__ == "__main__":
     print(f"Mean Standard Deviation: {stdeviation(data_2)}")
     print(f"Mean Absolute Deviation: {mad(data_2)}")
     print(f"Range: {get_range(data_2)}")
+
+    print("\n")
+
+    print(data_3)
+    print(f"IQR: {iqr(data_3)}")
+
+    print("\n")
+
+    print(data_4)
+    print(f"IQR: {iqr(data_4)}")
