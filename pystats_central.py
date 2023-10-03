@@ -136,7 +136,7 @@ if __name__ == "__main__":
     print(f"Mode: {mode(data_1)}")
 
     print("\n")
-
+# Testing mean median and mode
     print(data_2)
     print(f"Mean: {mean(data_2)}")
     print(f"Median: {median(data_2)}")
