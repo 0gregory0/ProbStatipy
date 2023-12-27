@@ -10,3 +10,6 @@
 
 # Ignoring Virtual Environment
 /.venv/
+
+# Ignoring more pycache
+ /src/ProbStatipy/__pycache__/

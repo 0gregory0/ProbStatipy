@@ -1,4 +1,4 @@
-import central
+from . import central
 import math
 
 # VARIANCE
