@@ -1,4 +1,4 @@
-import central as pc
+import central
 import math
 
 # VARIANCE
@@ -16,13 +16,13 @@ def variance(data: list):
     """
 
     # getting the mean of the data
-    mean = pc.mean(data)
+    mean = central.mean(data)
 
     # getting the squared differences between the mean and each datapoint
     deviation_squared = [(i - mean) ** 2 for i in data]
 
     # getting the mean of the squares differences
-    variance = pc.mean(deviation_squared)
+    variance = central.mean(deviation_squared)
 
     return variance
 # =============================================================================
@@ -63,13 +63,13 @@ def mad(data: list):
     """
 
     # Deriving the mean
-    mean = pc.mean(data)
+    mean = central.mean(data)
 
     # Getting the absolute difference between the mean and each datapoint
     absolute_deviation = [abs(i - mean) for i in data]
 
     # getting the mean of the absolute differences
-    mad = pc.mean(absolute_deviation)
+    mad = central.mean(absolute_deviation)
 
     return mad
 # =============================================================================
