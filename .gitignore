@@ -12,4 +12,4 @@
 /.venv/
 
 # Ignoring more pycache
- /src/ProbStatipy/__pycache__/
+/src/ProbStatipy/__pycache__/
