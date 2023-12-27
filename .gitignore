@@ -6,4 +6,4 @@ __pycache__
 /dist/
 
 # Ignore example.egg-info folder inside src
-/src/StatsPro.egg-info/
+/src/ProbStatipy.egg-info/
