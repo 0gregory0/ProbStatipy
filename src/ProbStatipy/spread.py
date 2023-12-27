@@ -1,4 +1,4 @@
-import pystats_central as pc
+import central as pc
 import math
 
 # VARIANCE
