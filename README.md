@@ -49,7 +49,7 @@ print(spread.variance([3,4,5]))
 
 ## Functions
 Below is a catalog of functions available in each module
-> `central.py`
+> **`central.py`**
 >  > `mean()`
 >  > Calculates the population arithmetic mean
 >
@@ -59,7 +59,8 @@ Below is a catalog of functions available in each module
 >  > `mode()`
 >  > Calculates the mode
 
-> `spread.py`
+
+> **`spread.py`**
 >  > `variance()`
 >  > calculates the population variance
 >
