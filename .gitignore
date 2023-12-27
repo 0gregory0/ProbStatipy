@@ -1,2 +1,9 @@
+# Ignoring Dev tools
 __pycache__
 .vscode
+
+# Ignore dist folder in the root
+/dist/
+
+# Ignore example.egg-info folder inside src
+/src/StatsPro.egg-info/
