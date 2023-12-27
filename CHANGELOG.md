@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.3] -> 2023-12-27
+### Fixed
+- fixed more import issues on spread.py
+
 ## [0.0.2] -> 2023-12-27
 ### Fixed
 - spread.py was importing from `pystats_central`. This module doesn't exist as it was renamed to `statspro_central` then `central`.
