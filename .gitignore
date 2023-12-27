@@ -1,9 +1,12 @@
 # Ignoring Dev tools
-__pycache__
-.vscode
+/__pycache__/
+/.vscode/
 
 # Ignore dist folder in the root
 /dist/
 
 # Ignore example.egg-info folder inside src
 /src/ProbStatipy.egg-info/
+
+# Ignoring Virtual Environment
+/.venv/
