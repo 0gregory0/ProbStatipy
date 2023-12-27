@@ -59,7 +59,7 @@ Below is a catalog of functions available in each module
 >  > `mode()`
 >  > Calculates the mode
 
-> `spread.py()`
+> `spread.py`
 >  > `variance()`
 >  > calculates the population variance
 >
