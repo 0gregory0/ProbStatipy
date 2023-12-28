@@ -2,7 +2,7 @@
 ---
 
 ## Intro
-ProbStatipy is a package of Python modules equipped with functions that are used in Statistics.
+[ProbStatipy](https://pypi.org/project/ProbStatipy/) is a package of Python modules equipped with functions that are used in Statistics.
 
 While the functions are extensively documented, you can check out my Jupyter Notebooks in the [Numerical Summary repo](https://github.com/0gregory0/Numerical-Summary) to fully understand my thought process while coming up with these functions.
 
