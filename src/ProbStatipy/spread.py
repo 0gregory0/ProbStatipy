@@ -105,7 +105,7 @@ def iqr(data: list):
 
     # let q1 be the q1th value if the q1th value is whole
     if q1th_value.is_integer() :
-        q1 = data[q1th_value - 1] # -1 because of zero based indexing
+        q1 = data[int(q1th_value) - 1] # -1 because of zero based indexing
     
     # and carry out linear interpolation to find q1 if it is not a whole number
     else:
@@ -116,7 +116,7 @@ def iqr(data: list):
 
     # let q3 be the q3rd value if the q3rd value is whole
     if q3rd_value.is_integer():
-        q3 = data[q3rd_value - 1] # -1 because of zero-based indexing
+        q3 = data[int(q3rd_value) - 1] # -1 because of zero-based indexing
 
     # if the q3rd value is not a whole number, carry out linear interpolation
     else:
@@ -137,6 +137,7 @@ if __name__ == "__main__":
     data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
     data_3 = [7, 1, 3, 5, 9, 8, 6, 2]
     data_4 = [-19.8, -13.8, 12.0, 13.6, 14.3, 25.5, 36.3, 43.6]
+    data_5 = [2.2, 2.3, 4.5, 7.1, 5.9, 8.8, 14.4]
 
     print(data_1)
     print(f"Variance: {variance(data_1)}")
@@ -161,3 +162,8 @@ if __name__ == "__main__":
 
     print(data_4)
     print(f"IQR: {iqr(data_4)}")
+
+    print("\n")
+
+    print(data_5)
+    print(f"IQR: {iqr(data_5)}")

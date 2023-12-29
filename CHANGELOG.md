@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.5] -> 2023-12-29
+### Added
+- `iqr()` can now take in a list of floats and return the interquartile range
+
 ## [0.0.4] -> 2023-12-27
 ### Fixed
 - fixed more import issues on spread.py I hope this is the last one.
