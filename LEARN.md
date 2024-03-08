@@ -1,10 +1,12 @@
-# How to Create a Python Package and Publish it on PYPI
+# How I Created the ProbStatipy Python Package and Published it on PYPI
 
 These are the steps I followed to create the ProbStatipy package and publish it
 on [PyPI](https://pypi.org/). You can use these steps to create your own Python
 package and publish it on PyPI. Once your package is on PYPI, anyone can
 download it using the famous `pip install <package_name>` command on their
 terminal.
+
+For a step by step approach on I came up with the ProbStatipy modules, check out the modules on this repository: [Probstatipy](https://github.com/0gregory0/ProbStatipy-Notebooks)
 
 ---
 
