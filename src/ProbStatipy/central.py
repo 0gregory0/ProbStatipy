@@ -13,17 +13,47 @@ def mean(data: list):
     mean = (sum(data))/len(data)
     return mean
 # =============================================================================
-# Other means to impliment:
+# Other means to implement:
 # floor_mean -> arithmetic mean but truncates the decimals by performing floor
 # division
-# weighted_mean
 # golden_mean
+
+
+# WEIGHTED MEAN
+def weighted_mean(data: list, weights: list):
+
+    """
+    Function: weighted_mean() -> Gets the weighted mean of a list of numbers.
+    Input:
+        data: a list stored as "data".
+        weights: a list of weights corresponding to each number in the "data" list
+    Output: weighted_mean -> a float denoting the weighted mean stored as "weighted_mean"
+
+    The weighted mean is obtained by dividing the sum of the products of each data point
+    and its corresponding weight by the sum of the weights.
+    """
+
+    # Check if the lengths of data and weights match
+    if len(data) != len(weights):
+        raise ValueError("Lengths of data and weights must be equal.")
+
+    # Calculate the weighted sum
+    weighted_sum = sum(x * w for x, w in zip(data, weights))
+
+    # Calculate the sum of the weights
+    sum_weights = sum(weights)
+
+    # Calculate the weighted mean
+    weighted_mean = weighted_sum / sum_weights
+
+    return weighted_mean
+
 
 # MEDIAN
 def median(data: list):
 
     """
-    Function: median() -> Get's the median of a list of numbers
+    Function: median() -> Gets the median of a list of numbers
     Input: data -> a list of numbers
     Output: median -> the number in the middle of the list if the length of the
                       list is odd or the arithmetic mean of the two numbers in
@@ -36,9 +66,9 @@ def median(data: list):
     4. If even, obtain the mean of the {n/2}th value and the {(n+2)/2}th value.
     """
 
-    sorted(data) # This arranges the data in ascending order
+    sorted(data)  # This arranges the data in ascending order
     
-    if (len(data)%2) != 0:
+    if (len(data) % 2) != 0:
         median = data[(int((len(data) + 1) / 2) - 1)] 
         """
         -> All we're doing is getting the {(n+1)/2}th value. 
@@ -64,62 +94,63 @@ def median(data: list):
     return median
 # =============================================================================
 
+
 # MODE
 def mode(data: list):
    
-   """
-   Function: mode() -> Get's the mode of a list of numbers
-   Input: data -> a list of numbers
-   Output: mode -> The number that occurs the highest amount of times
-                   a list if there's more than one mode
-                   None if all numbers occur an equal amount of times
-   """
+    """
+    Function: mode() -> Gets the mode of a list of numbers
+    Input: data -> a list of numbers
+    Output: mode -> The number that occurs the highest amount of times
+                    a list if there's more than one mode
+                    None if all numbers occur an equal amount of times
+    """
 
-   # A list was made just incase there is more than one element occur the
-   # highest number of times
-   list_of_modes = [] 
+    # A list was made just incase there is more than one element occur the
+    # highest number of times
+    list_of_modes = []
 
-   # The number of times an element occurs is inputed here and compared with
-   # the next element the highest number is the one that is stored.
-   mode_count = 0 
-   
-   for i in data:
-       
-      if data.count(i) > mode_count:
-          
-         # Resets the list when a new high occuring item is found
-         list_of_modes = []
+    # The number of times an element occurs is inputted here and compared with
+    # the next element the highest number is the one that is stored.
+    mode_count = 0
 
-         # Counts the number of times an element occurs.
-         mode_count = data.count(i)
+    for i in data:
 
-         # The element is appended to the list iff it occurs the highest
-         # number of times
-         list_of_modes.append(i)
-      
-      # Comes in handy when we have more than one mode
-      elif data.count(i) == mode_count:
-          
-          # Avoids repetition
-          if i in list_of_modes:
-              pass
-          
-          else:
-              # Appends another element that occurs just as much as the highest
-              # element did
-              list_of_modes.append(i)
+        if data.count(i) > mode_count:
 
-   # Returning the number that occurs the highest amount of times
-   if len(list_of_modes) == 1:
-       return list_of_modes[0]
-   
-   # Or a None if all numbers occur an equal amount of times
-   elif len(list_of_modes) == len(data):
-       return None
-   
-   # Or a list if there's more than one mode
-   else:
-      return list_of_modes
+            # Resets the list when a new high occuring item is found
+            list_of_modes = []
+
+            # Counts the number of times an element occurs.
+            mode_count = data.count(i)
+
+            # The element is appended to the list iff it occurs the highest
+            # number of times
+            list_of_modes.append(i)
+
+        # Comes in handy when we have more than one mode
+        elif data.count(i) == mode_count:
+
+            # Avoids repetition
+            if i in list_of_modes:
+                pass
+
+            else:
+                # Appends another element that occurs just as much as the highest
+                # element did
+                list_of_modes.append(i)
+
+    # Returning the number that occurs the highest amount of times
+    if len(list_of_modes) == 1:
+        return list_of_modes[0]
+
+    # Or a None if all numbers occur an equal amount of times
+    elif len(list_of_modes) == len(data):
+        return None
+
+    # Or a list if there's more than one mode
+    else:
+        return list_of_modes
 # =============================================================================
 
 
@@ -129,11 +160,13 @@ def mode(data: list):
 if __name__ == "__main__":
     data_1 = [34500, 30700, 32900, 36000, 34100, 33800, 32500]
     data_2 = [34900, 27500, 31600, 39700, 35300, 33800, 31700]
+    weights = [1500, 2500, 3750, 7000, 4200, 3100, 1000]
 
     print(data_1)
     print(f"Mean: {mean(data_1)}")
     print(f"Median: {median(data_1)}")
     print(f"Mode: {mode(data_1)}")
+    print(f"Weighted mean: {weighted_mean(data_1, weights)}")
 
     print("\n")
 # Testing mean median and mode
@@ -141,3 +174,4 @@ if __name__ == "__main__":
     print(f"Mean: {mean(data_2)}")
     print(f"Median: {median(data_2)}")
     print(f"Mode: {mode(data_2)}")
+    print(f"Weighted mean: {weighted_mean(data_2, weights)}")
