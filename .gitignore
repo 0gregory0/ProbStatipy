@@ -13,3 +13,6 @@
 
 # Ignoring more pycache
 /src/ProbStatipy/__pycache__/
+
+# Ignoring idea folder in the root
+.idea/
