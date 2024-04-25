@@ -1,5 +1,8 @@
 # Changelog
 
+### Added
+- `weighted_mean()` a function that can calculate the mean of a data set, given specific weights
+
 ## [0.0.5] -> 2023-12-29
 ### Added
 - `iqr()` can now take in a list of floats and return the interquartile range
